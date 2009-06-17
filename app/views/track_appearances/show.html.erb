@@ -1,0 +1,18 @@
+<p>
+  <b>Album:</b>
+  <%=h @track_appearance.album_id %>
+</p>
+
+<p>
+  <b>Song:</b>
+  <%=h @track_appearance.song_id %>
+</p>
+
+<p>
+  <b>As number:</b>
+  <%=h @track_appearance.as_number %>
+</p>
+
+
+<%= link_to 'Edit', edit_track_appearance_path(@track_appearance) %> |
+<%= link_to 'Back', track_appearances_path %>
