@@ -1,0 +1,35 @@
+<h1><%=h @song.name %></h1>
+
+<div id="brief">
+	<h2 class="hide">Informacje podstawowe</h2>
+	
+	<ul class="essential">
+		<li>Czas trwania: <%= convert_seconds_to_time(@song.length) %></li>
+	</ul>
+	
+	<ul class="additional">
+		<li class="hide">W chcęliście: <%= @song.created_at %></li>
+		<li class="hide">W kolekcji: <%= @song.created_at %></li>
+		<li>Dodany: <%= @song.created_at %></li>
+		<li class="hide">Wyświetleń: <%= @song.created_at %></li>
+	</ul>
+</div>
+
+<div id="main">
+	<h2>Na albumach</h2>
+	<%= render :partial => "albums/list", :object => @song.albums %>
+	
+	<h2>Tekst</h2>
+	<div class="info"><%=h @song.description %></div>
+	
+	<h2 class="hide">Komentarze</h2>
+	<ul id="comments" class="hide">
+		<li>pierwszy</li>
+		<li>drugi</li>
+		<li>trzeci</li>
+	</ul>
+</div>
+
+<div class="admin">
+	<%= link_to 'Edytuj utwór', edit_song_path(@song) %>
+</div>
