@@ -3976,3 +3976,368 @@ Rendered layouts/_header (0.1ms)
 Rendered layouts/_menu (0.1ms)
 Rendered layouts/_footer (0.2ms)
 Completed in 160ms (View: 124, DB: 29) | 200 OK [http://localhost/wykonawcy?l=n]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtistsController#index (for 127.0.0.1 at 2009-06-17 22:50:26) [GET]
+  Parameters: {"l"=>"d"}
+  [4;35;1mArtist Load (10.2ms)[0m   [0mSELECT * FROM `artists` WHERE (ucase(left(name, 1)) = 'd') ORDER BY name[0m
+Rendering template within layouts/application
+Rendering artists/index
+  [4;36;1mArtist Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mAlbum Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 474) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 919) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 442) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1010) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 499) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 996) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 138) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1266) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 834) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 205) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1284) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 57) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1137) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 668) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 609) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 396) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 826) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 497) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 410) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1092) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1358) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1073) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 171) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 324) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 361) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 370) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 382) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 206) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 558) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 308) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 859) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1028) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 712) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 729) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1365) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 651) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1093) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1086) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 968) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1471) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 177) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 568) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1337) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 979) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 465) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 24) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1009) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 910) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1303) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1269) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1370) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 89) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 118) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 879) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1169) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 717) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1049) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 496) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 900) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 811) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1053) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1295) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 999) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 93) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 259) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 965) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 78) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1047) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1302) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1231) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 137) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 825) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1081) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1014) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1111) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 117) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 956) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1371) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1406) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 429) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1054) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1391) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1168) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1315) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 163) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1113) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1170) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 208) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1236) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1544) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1017) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 590) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1408) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 58) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1130) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1383) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 564) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 198) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1225) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1307) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 901) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1164) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 306) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 737) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1422) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 833) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 903) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 980) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1235) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1048) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1015) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 899) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 896) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1136) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 514) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1204) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 869) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1273) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 337) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1163) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 197) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 926) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1116) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1255) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1205) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1339) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1112) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1152) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 187) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1477) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 10) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1110) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 880) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1027) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 411) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 146) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1056) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 742) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1082) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1372) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1504) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 895) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 918) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 83) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 414) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 812) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1553) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 578) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1517) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 203) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 854) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 267) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1468) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 192) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1234) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 367) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 250) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 640) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 252) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 916) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 433) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1322) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 911) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 579) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 305) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1151) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1382) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1238) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 467) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 543) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 983) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1144) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 316) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1458) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1521) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 562) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 114) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 802) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 270) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 486) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1099) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 108) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 759) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1194) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 982) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 419) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1129) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1390) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1167) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 661) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 950) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 679) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1340) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1344) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 643) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 200) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 384) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 557) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1018) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 397) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1252) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 518) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1101) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1299) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 213) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 500) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 112) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1451) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1003) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 371) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1199) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 810) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1222) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1244) [0m
+Rendered artists/_list (539.0ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_menu (0.1ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 564ms (View: 416, DB: 137) | 200 OK [http://localhost/wykonawcy?l=d]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtistsController#index (for 127.0.0.1 at 2009-06-17 22:50:28) [GET]
+  Parameters: {"l"=>"e"}
+  [4;36;1mArtist Load (7.5ms)[0m   [0;1mSELECT * FROM `artists` WHERE (ucase(left(name, 1)) = 'e') ORDER BY name[0m
+Rendering template within layouts/application
+Rendering artists/index
+  [4;35;1mArtist Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+  [4;36;1mAlbum Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 313) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1525) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1499) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 723) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 480) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1508) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 62) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 278) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 232) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 545) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1006) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 69) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1241) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 588) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 534) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 840) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 242) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 927) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1441) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1121) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 167) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 656) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 794) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1139) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 678) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1025) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 645) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 436) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1248) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1401) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 850) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1327) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 302) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1191) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1265) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 615) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1150) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 725) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1126) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 202) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1551) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 528) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 838) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1410) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 547) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 424) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 604) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1310) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 912) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 894) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1246) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 395) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1463) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 476) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1533) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 523) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1220) [0m
+Rendered artists/_list (135.6ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_menu (0.1ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 155ms (View: 104, DB: 43) | 200 OK [http://localhost/wykonawcy?l=e]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtistsController#index (for 127.0.0.1 at 2009-06-17 22:50:29) [GET]
+  Parameters: {"l"=>"g"}
+  [4;36;1mArtist Load (7.5ms)[0m   [0;1mSELECT * FROM `artists` WHERE (ucase(left(name, 1)) = 'g') ORDER BY name[0m
+Rendering template within layouts/application
+Rendering artists/index
+  [4;35;1mArtist Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+  [4;36;1mAlbum Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 804) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 602) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 652) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1443) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 159) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1195) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 272) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1330) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 417) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 746) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 60) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 295) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 807) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 829) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 730) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1070) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1442) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1223) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 173) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1326) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 276) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1207) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 511) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 214) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 260) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1542) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 945) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1470) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 158) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 238) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1172) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 876) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1361) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 603) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1008) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1433) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 264) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1166) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 143) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1156) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1286) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 97) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 30) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1528) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `albums` WHERE (`albums`.artist_id = 1024) [0m
+Rendered artists/_list (160.4ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_menu (0.1ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 179ms (View: 135, DB: 36) | 200 OK [http://localhost/wykonawcy?l=g]
