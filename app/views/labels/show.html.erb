@@ -19,7 +19,7 @@
 
 <div id="main">
 	<h2>Profil wytwórni</h2>
-	<div class="info"><%=h @label.description %></div>
+	<div class="info"><%= @label.description %></div>
 	
 	<h2>Lista wydanych albumów</h2>
 	<%= render :partial => "albums/list", :object => @label.albums %>

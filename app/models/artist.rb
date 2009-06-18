@@ -7,8 +7,8 @@ class Artist < ActiveRecord::Base
   has_many :members, :through => :has_members
   
   has_attached_file :image, :styles => { :small => "100x", :medium => "300x" },
-                    :url  => "/imgs/artists/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/imgs/artists/:id/:style/:basename.:extension"
+                    :url  => "#{PAPERCLIP_BASE_URL}artists/:id/:style/:basename.:extension",
+                    :path => "#{PAPERCLIP_BASE_PATH}artists/:id/:style/:basename.:extension"
   
   def url_name
      self.name.gsub(/[^[:alnum:]]/,'-') # zamien wszysktkie znaki z name ktore nie sa alfanumeryczna na -
