@@ -1,0 +1,45 @@
+<%= DUPA %>
+
+<h1><%=h @album.artist.name %> - <%=h @album.name %></h1>
+
+<div id="brief">
+	<h2 class="hide">Informacje podstawowe</h2>
+	<div id="picture">
+	<%= image_tag @album.image.url(:medium), :alt => 'Okładka albumu ' + @album.artist.name + ' - ' + @album.name, :class => "image" %>
+		<span id="case"></span>
+	</div>
+	
+	
+	<ul class="essential">
+		<li>Wykonawca: <%= artist_linking_name(@album.artist) %></li>
+		<li>Premiera: <%=h @album.release_date  %></li>
+		<li>Wytwórnia: <%= label_linking_name(@album.label) %></li>
+		<li>Numer katalogowy: <%= @album.catalog_number %></li>
+	</ul>
+	
+	<ul class="additional">
+		<li class="hide">W chcęliście: <%= @album.created_at %></li>
+		<li class="hide">W kolekcji: <%= @album.created_at %></li>
+		<li>Dodany: <%= @album.created_at %></li>
+		<li class="hide">Wyświetleń: <%= @album.created_at %></li>
+	</ul>
+</div>
+
+<div id="main">
+	<h2>Lista utworów</h2>
+	<%= render :partial => "songs/list", :object => @album.songs %>
+	
+	<h2>Opis produkcji</h2>
+	<div class="info"><%=h @album.description %></div>
+	
+	<h2 class="hide">Komentarze</h2>
+	<ul id="comments" class="hide">
+		<li>pierwszy</li>
+		<li>drugi</li>
+		<li>trzeci</li>
+	</ul>
+</div>
+
+<div class="admin">
+	<%= link_to 'Edytuj album', edit_album_path(@album) %>
+</div>
