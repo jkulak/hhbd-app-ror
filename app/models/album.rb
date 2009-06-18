@@ -4,8 +4,8 @@ class Album < ActiveRecord::Base
   has_many :track_appearances
   has_many :songs, :through => :track_appearances
   has_attached_file :image, :styles => { :small => "100x100>", :medium => "300x300" },
-                    :url  => "/imgs/albums/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/imgs/albums/:id/:style/:basename.:extension"
+                    :url  => "http://s.jkulak.megiteam.pl/albums/:id/:style/:basename.:extension",
+                    :path => "/home/jkulak/www/imgs/albums/:id/:style/:basename.:extension"
     
 
   def url_name
