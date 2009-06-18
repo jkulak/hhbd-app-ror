@@ -29,3 +29,5 @@ config.action_view.cache_template_loading            = true
 
 # Paperclip paths
 Paperclip.options # co tutaj???
+
+DUPA = "dupeczka produkcyjna"
