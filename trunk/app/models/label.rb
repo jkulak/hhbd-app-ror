@@ -2,8 +2,8 @@ class Label < ActiveRecord::Base
   has_many :albums
   
   has_attached_file :image, :styles => { :small => "100x", :medium => "300x" },
-                    :url  => "/imgs/labels/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/imgs/labels/:id/:style/:basename.:extension"
+                    :url  => "#{PAPERCLIP_BASE_URL}labels/:id/:style/:basename.:extension",
+                    :path => "#{PAPERCLIP_BASE_PATH}labels/:id/:style/:basename.:extension"
   
   def url_name
      self.name.gsub(/[^[:alnum:]]/,'-') # zamien wszysktkie znaki z name ktore nie sa alfanumeryczna na -

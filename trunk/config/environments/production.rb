@@ -27,7 +27,7 @@ config.action_view.cache_template_loading            = true
 # Enable threaded mode
 # config.threadsafe!
 
-# Paperclip paths
-Paperclip.options # co tutaj???
-
-DUPA = "dupeczka produkcyjna!"
+# Paperclip environmental settings
+PAPERCLIP_BASE_PATH = '/home/jkulak/www/imgs/'
+PAPERCLIP_BASE_URL = 'http://s.jkulak.megiteam.pl/'
+PAPERCLIP_COMMAND_PATH = '/home/jkulak/www/imagemagick/bin'

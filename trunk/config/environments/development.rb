@@ -16,4 +16,7 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
-DUPA = "dupeczka deweloperska!"
+# Paperclip environmental settings
+PAPERCLIP_BASE_PATH = '/usr/httpd/html/s/imgs/'
+PAPERCLIP_BASE_URL = 'http://s.kosiarka/imgs/'
+PAPERCLIP_COMMAND_PATH = '/opt/local/bin'

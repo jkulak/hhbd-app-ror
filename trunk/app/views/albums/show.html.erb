@@ -1,5 +1,3 @@
-<%= DUPA %>
-
 <h1><%=h @album.artist.name %> - <%=h @album.name %></h1>
 
 <div id="brief">
@@ -30,7 +28,7 @@
 	<%= render :partial => "songs/list", :object => @album.songs %>
 	
 	<h2>Opis produkcji</h2>
-	<div class="info"><%=h @album.description %></div>
+	<div class="info"><%= @album.description %></div>
 	
 	<h2 class="hide">Komentarze</h2>
 	<ul id="comments" class="hide">
