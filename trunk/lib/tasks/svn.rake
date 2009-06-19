@@ -17,7 +17,7 @@ namespace :svn do
       printf "Assuming same minor version: #{minor}\n"
     end
     
-    date_part = "#{Time.now.strftime("%Y").last}#{Time.now.strftime("%m%d")}"    
+    date_part = "#{Time.now.strftime("%Y").last}#{Time.now.strftime("%m%d%H%M%S")}"    
     build = latest_tag.last.to_i + 1
     printf "Build number: #{build}\n"
     new_tag = "v#{major}_#{minor}_#{date_part}_#{build}"

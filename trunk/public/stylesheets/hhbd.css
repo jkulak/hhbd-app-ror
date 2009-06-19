@@ -312,7 +312,7 @@ body {
 }
 
 .admin {
-	display: none;
+	display: block;
 	float: left;
 	border: 2px #B40000 solid;
 	background: #F4CBC2;
