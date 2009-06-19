@@ -1,0 +1,24 @@
+<h1>Editing track_appearance</h1>
+
+<% form_for(@track_appearance) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :album_id %><br />
+    <%= f.text_field :album_id %>
+  </p>
+  <p>
+    <%= f.label :song_id %><br />
+    <%= f.text_field :song_id %>
+  </p>
+  <p>
+    <%= f.label :as_number %><br />
+    <%= f.text_field :as_number %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @track_appearance %> |
+<%= link_to 'Back', track_appearances_path %>
