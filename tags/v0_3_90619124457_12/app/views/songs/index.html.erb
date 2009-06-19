@@ -1,0 +1,9 @@
+<h1>Lista utworów<% if !params[:l].nil? %> [<span class="uppercase"><%= params[:l] %>]</span><% end %></h1>
+
+<%= song_menu_letters(params[:l]) %>
+
+<%= render :partial => "songs/list", :object => @songs %>
+
+<div class="admin">
+<%= link_to 'Dodaj utwór', new_song_path %>
+</div>
