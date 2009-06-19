@@ -1,0 +1,18 @@
+<ul class="elemlist simple">
+<% object.each do |album| %>
+	<li class="elem">
+		<a class="cover" href="<%= album_path(album, :html) %>">
+			<%= image_tag album.image.url(:small) %>
+			<span></span>
+		</a>
+		<ul class="info">
+			<li><%= link_to album.artist.name + " - " + album.name, album_path(album, :html) %></li>
+			<% if !album.label.name.empty? %><li>Wytwórnia: <%= link_to album.label.name, album.label %></li><% end %>
+			<% if !album.release_date.nil? %><li>Data wydania: <%= album.release_date.strftime('%d %B %Y') %></li><% end %>
+		</ul>  		
+		<div class="admin">Admin: <%= link_to 'Edytuj', edit_album_path(album) %> |
+			<%= link_to 'Usuń', album, :confirm => 'Na pewno?', :method => :delete %>
+		</div>     
+	</li>
+<% end %>
+</ul>
