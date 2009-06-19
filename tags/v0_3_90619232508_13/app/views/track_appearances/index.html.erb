@@ -1,0 +1,24 @@
+<h1>Listing track_appearances</h1>
+
+<table>
+  <tr>
+    <th>Album</th>
+    <th>Song</th>
+    <th>As number</th>
+  </tr>
+
+<% @track_appearances.each do |track_appearance| %>
+  <tr>
+    <td><%=h track_appearance.album_id %></td>
+    <td><%=h track_appearance.song_id %></td>
+    <td><%=h track_appearance.as_number %></td>
+    <td><%= link_to 'Show', track_appearance %></td>
+    <td><%= link_to 'Edit', edit_track_appearance_path(track_appearance) %></td>
+    <td><%= link_to 'Destroy', track_appearance, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New track_appearance', new_track_appearance_path %>

@@ -1,0 +1,330 @@
+/* GLOBAL RESET */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* GLOBAL SETITINGS */
+
+h1, h2, p {
+	margin-bottom: 10px;
+}
+
+li {
+	list-style-type: none;
+}
+
+a:hover {
+	color: black;
+}
+
+body {
+	font-family: "trebuchet ms", Georgia;
+	background-color: #f6f4e8;
+}
+
+/* GENERAL MODIFIERS */
+
+.hide {
+	display: none;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.dotted {
+
+}
+
+.dotted li {
+	margin-left: 15px;
+	list-style-type: square;
+}
+
+/* SITE HEADER */
+
+#header {
+	height: 140px;
+	background-image: url("/s/toplogo.jpg");
+	position: relative;
+}
+
+#header span {
+	position: absolute;
+	bottom: 0;
+	margin-left: 20px;
+}
+
+#header span a {
+	font-size: 500%;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* MAIN HORIZONTAL MENU */
+
+#menu {
+	float: left;
+	width: 100%;
+	background: #d5c179;
+}
+
+#menu ul {
+	float: right;
+	width: 100%;
+	padding: 10px 10px 10px 0;
+}
+
+#menu li {
+	float: right;
+	padding-right: 10px;
+	text-transform: uppercase;
+}
+
+/* MAIN LAYOUT */
+
+#center {
+	float: left;
+	width: 100%;
+	background-color: #ebe0c0;
+	position: relative;
+}
+
+#content {
+	padding: 10px;	
+}
+
+/* ELEMENT VIEW SITES */
+
+/* brief info */
+#brief {
+	width: 349px;
+	float: left;
+	background: #d5c179;
+	padding: 9px 0 0 10px;
+}
+
+#photo {
+	width: 348px;
+	height: 418px;
+	position: relative;
+	@todo: poprawic overflow, tak, zeby na Czekonie zdjecie chowalo sie w ramce;
+	overflow: hidden;
+}
+
+#photo * {
+	position: absolute;
+}
+
+#frame {
+	width: 100%;
+	height: 100%;
+	background: url("/s/pframe.png") no-repeat;
+}
+
+#photo img {
+	top: 22px;
+	left: 20px;
+}
+
+#photo #info {
+	font-size: 12px;
+	bottom: 18px;
+	left: 10px;
+	width: 100%;
+}
+
+#brief ul {
+	margin-bottom: 10px;
+}
+
+#brief li {
+	clear: both;
+	margin-bottom: 5px;
+}
+
+/* main info */
+#main {
+	margin-left: 368px;
+}
+
+/* odsłona albumu */
+#picture {
+	margin: 6px 0 0 5px;
+	width: 327px;
+	height: 320px;
+	position: relative;
+}
+
+#picture * {
+	position: absolute;
+}
+
+#case {
+	width: 100%;
+	height: 100%;
+	background: url("/s/cdcase.png") no-repeat;
+}
+
+#picture img {
+	top: 6px;
+	left: 20px;
+}
+
+
+.tracklist {
+	float: left;
+	width: 100%;
+}
+
+.tracklist li {
+	list-style-type: decimal-leading-zero;
+	clear: both;
+	margin: 2px;
+	position: relative;
+}
+
+
+.letternav {
+	width: 100%;
+	text-transform: uppercase;
+	background: #d5c179;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.letternav li {
+	float: left;
+	padding: 5px;
+}
+
+.letternav  a {
+	display: block;
+	
+}
+
+.letternav li.selected {
+	background: #ede0c0;
+}
+
+/* podstawowa lista elemetów */
+.elemlist {
+	float: left;
+	width: 100%;
+}
+
+.elemlist .elem {
+	float:left;
+	clear:both;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.elemlist .info {
+	margin-left: 122px;
+}
+
+.elemlist .info li {
+
+}
+
+.cover {
+	float:left;
+	position: relative;
+	width: 112px;
+	height: 106px;
+}
+
+.cover span {
+	position: absolute;
+	background: url("/s/cdcases.png") no-repeat;
+	width: 112px;
+	height: 106px;
+}
+
+.cover img {
+	position: absolute;
+	margin-left: 9px;
+	margin-top: 3px;
+}
+
+.frame {
+	float:left;
+	position: relative;
+	width: 110px;
+	height: 132px;
+	overflow: hidden;
+}
+
+.frame span {
+	position: absolute;
+	background: url("/s/pframes.png") no-repeat;
+	width: 110px;
+	height: 132px;
+}
+
+.frame img {
+	position: absolute;
+	margin-left: 6px;
+	margin-top: 7px;
+	overflow: hidden;
+}
+
+/* wersja simple listy elementów */
+.elemlist.simple li {
+	width: auto;
+	clear: none;
+	margin-right: 10px;
+}
+
+.elemlist.simple .info {
+	display: none;
+}
+
+#footer {
+	background: #d5c179;
+	width: 100%;
+	font-size: small;
+	float: left;
+}
+
+#footer ul {
+	padding: 10px 0 10px 10px;
+	float: left;
+}
+
+#footer li {
+	margin-right: 10px;
+	float: left;
+}
+
+/* formularze administracyjne */
+.edit_album input,
+.edit_album textarea,
+.edit_artist input,
+.edit_artist textarea {
+	border: 1px #C7C573 solid;
+	background: #E8FFCC;
+}
+
+.admin {
+	display: block;
+	float: left;
+	border: 2px #B40000 solid;
+	background: #F4CBC2;
+	color: black;
+	font-size: 12px;
+	padding: 4px;
+	margin: 2px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.admin a {
+	color: black;
+}
