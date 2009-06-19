@@ -1,9 +1,0 @@
-<ul class="tracklist">
-<% object.each do |song| %>
-	<li><%= song_linking_name(song) %> (<%= convert_seconds_to_time(song.length) %>)</li>
-
-	<li class="admin">Admin: <%= link_to 'Edytuj', edit_song_path(song) %> |
-		<%= link_to 'Usuń', song, :confirm => 'Na pewno?', :method => :delete %>
-	</li>
-<% end %>
-</ul>
