@@ -19,7 +19,7 @@ class Artist < ActiveRecord::Base
   end
   
   def self.find_by_first_letter(letter)
-         @artists = find(:all, :conditions => ['ucase(left(name, 1)) = ?', letter], :order => :name)
+         @artists = find(:all, :conditions => ['ucase(left(name, 1)) = ?', letter])
   end
    
   def to_param
@@ -27,6 +27,6 @@ class Artist < ActiveRecord::Base
   end
    
   def self.all_for_select
-    self.all.map {|x| [x.name, x.id]}
+    self.find(:all, :order => "name").map { |x| [x.name, x.id] }
   end
 end
