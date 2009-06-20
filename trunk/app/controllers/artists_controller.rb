@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
   # GET /artists.xml
   def index
     if (params[:l].nil?)
-      @artists = Artist.all(:order => 'name', :conditions => ['image_file_name <> ""'])
+      @artists = Artist.all(:order => 'created_at desc', :conditions => ['image_file_name <> ""'], :limit => 20)
     else 
       @artists = Artist.find_by_first_letter(params[:l])
     end
