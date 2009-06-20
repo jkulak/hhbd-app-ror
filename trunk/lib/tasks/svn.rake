@@ -1,7 +1,10 @@
 REPO_PATH = "https://hhbd20.googlecode.com/svn/"
 
 namespace :svn do
-  desc "Create new tag from trunk"
+  
+  # command line usage: rake svn:tag["your commit message", "rc3", 2, 0]
+  # for svn copy foobar/trunk foobat/tags/v2_0_dategoeshere_buildnumbergoeshere_rc3 -m "your commit message"
+  desc "Create new tag from trunk increasing build number"
   task :tag, :message, :description, :major, :minor do |t, args|
     latest_tag = IO.popen("svn ls #{REPO_PATH}tags").readlines.last.chomp("/\n").split('_')
     
@@ -16,7 +19,7 @@ namespace :svn do
       minor = latest_tag[1]
       printf "Assuming same minor version: #{minor}\n"
     end
-    
+
     date_part = "#{Time.now.strftime("%Y").last}#{Time.now.strftime("%m%d%H%M%S")}"    
     build = latest_tag.last.to_i + 1
     printf "Build number: #{build}\n"
@@ -27,25 +30,29 @@ namespace :svn do
   end
   
   desc "Commit changes and create new tag"
-  task :commit_and_create_tag => :commit do
-    :tag
+  task :commit_and_create_tag => [:commit] do
+    Rake::Task["svn:tag"].invoke
   end
   
   desc "Shortcut for commit_and_create_tag"
   task :tagit => :commit_and_create_tag
   
-  desc "Commit changes"
-  task :commit, :message do |t, args|
+  # command line usage: rake db:commit["your commit msg goes here"]
+  desc "Commit changes adding files before"
+  task :commit => [:add] do |t, args|
+    puts "Commiting changes..."
     svn_cmd = "svn ci -m \"#{args.message}\""
-    printf "Executing: #{svn_cmd}\n"
     system(svn_cmd)
-    end
-  
-  desc "Add new files to subversion"
-  task :add_new_files do
-     system "svn status | grep '^\?' | sed -e 's/? *//' | sed -e 's/ /\ /g' | xargs svn add"
   end
   
+  # command line usage: rake db:add_new_files - OK
+  desc "Add new files to subversion"
+  task :add_new_files do
+    puts "Adding files to repository..."
+    system "svn status | grep '^\?' | sed -e 's/? *//' | sed -e 's/ /\ /g' | xargs svn add"
+  end
+  
+  # command line usage: rake db:add - OK
   desc "shortcut for adding new files"
   task :add => [ :add_new_files ]
   
@@ -77,9 +84,5 @@ namespace :svn do
     system "svn remove tmp/*"
     system "svn commit -m 'Removing /tmp/ folder'"
     system 'svn propset svn:ignore "*" tmp/'
-  end
-
-  
-  
-  
+  end  
 end
