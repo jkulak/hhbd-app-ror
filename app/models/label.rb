@@ -14,7 +14,7 @@ class Label < ActiveRecord::Base
   end
   
   def self.all_for_select
-    self.all.map {|x| [x.name, x.id]}
+    self.find(:all, :order => "name").map { |x| [x.name, x.id] }
   end
   
   def to_param

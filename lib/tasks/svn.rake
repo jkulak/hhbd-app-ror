@@ -2,7 +2,7 @@ REPO_PATH = "https://hhbd20.googlecode.com/svn/"
 
 namespace :svn do
   desc "Create new tag from trunk"
-  task :tag, :message, :major, :minor do |t, args|
+  task :tag, :message, :description, :major, :minor do |t, args|
     latest_tag = IO.popen("svn ls #{REPO_PATH}tags").readlines.last.chomp("/\n").split('_')
     
     major = args.major  

@@ -14,12 +14,12 @@
 		<% if !@artist.website.empty? %><li>Oficjalna strona internetowa: <%= link_to @artist.website, @artist.website %></li><% end %>
 		<% if !@artist.bands.empty? %>
 		<li>
-			Projekty: <%= render :partial => "artists/name_list", :object => @artist.bands %>
+			<%= I18n.t 'layout.artist.bands' %>: <%= render :partial => "artists/name_list", :object => @artist.bands %>
 		</li>
 		<% end %>
 		<% if !@artist.members.empty? %>
 		<li>
-			<%= I18n.t 'layout.band_members' %>: <%= render :partial => "artists/name_list", :object => @artist.members %>
+			<%= I18n.t 'layout.artist.members' %>: <%= render :partial => "artists/name_list", :object => @artist.members %>
 		</li>
 		<% end %>
 	</ul>
@@ -51,12 +51,12 @@
 	<% end %>
 	
 	<% if !@artist.albums.empty? %>
-	<h2>Wydane albumy<% if !@artist.bands.empty? %> solo<% end %></h2>
+	<h2><%= I18n.t 'layout.artist.solo_albums' %><% if !@artist.bands.empty? %> solo<% end %></h2>
 	<%= render :partial => "albums/list", :object => @artist.albums %>
 	<% end %>
 	
 	<% if !@group_albums.empty? %>
-	<h2>Albumy wydane w projektach</h2>
+	<h2><%= I18n.t 'layout.artist.albums' %></h2>
 	<%= render :partial => "albums/list", :object => @group_albums %>
 	<% end %>
 	

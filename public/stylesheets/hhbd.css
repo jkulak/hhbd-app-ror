@@ -3,7 +3,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	border: 0;
 }
 
 /* GLOBAL SETITINGS */
@@ -16,13 +15,21 @@ li {
 	list-style-type: none;
 }
 
+img {
+	border: 0;
+}
+
 a:hover {
 	color: black;
 }
 
 body {
 	font-family: "trebuchet ms", Georgia;
-	background-color: #f6f4e8;
+	background-color: #F6F4E8;
+}
+
+ul ul {
+	margin-top: 6px;
 }
 
 /* GENERAL MODIFIERS */
@@ -300,31 +307,4 @@ body {
 #footer li {
 	margin-right: 10px;
 	float: left;
-}
-
-/* formularze administracyjne */
-.edit_album input,
-.edit_album textarea,
-.edit_artist input,
-.edit_artist textarea {
-	border: 1px #C7C573 solid;
-	background: #E8FFCC;
-}
-
-.admin {
-	display: block;
-	float: left;
-	border: 2px #B40000 solid;
-	background: #F4CBC2;
-	color: black;
-	font-size: 12px;
-	padding: 4px;
-	margin: 2px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-
-.admin a {
-	color: black;
 }

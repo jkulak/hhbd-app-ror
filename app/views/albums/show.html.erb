@@ -6,8 +6,6 @@
 	<%= image_tag @album.image.url(:medium), :alt => 'Okładka albumu ' + @album.artist.name + ' - ' + @album.name, :class => "image" %>
 		<span id="case"></span>
 	</div>
-	
-	
 	<ul class="essential">
 		<li>Wykonawca: <%= artist_linking_name(@album.artist) %></li>
 		<li>Premiera: <%=h @album.release_date  %></li>

@@ -3,7 +3,11 @@
 
 pl:
     layout:
-        band_members: "Skład"
+        artist:
+            members: "Skład"
+            bands: "W projektach"
+            solo_albums: "Wydane albumy"
+            albums: "Albumy wydane w projektach"
         
         
     date:
