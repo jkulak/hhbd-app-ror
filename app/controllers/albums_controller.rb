@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
   # GET /albums.xml
   def index
     if (params[:l].nil?)
-      @albums = Album.all(:order => 'name', :conditions => ['image_file_name <> ""'])
+      @albums = Album.all(:order => 'name', :conditions => ['image_file_name <> ""'], :limit => 20)
     else 
       @albums = Album.find_by_first_letter(params[:l])
     end
