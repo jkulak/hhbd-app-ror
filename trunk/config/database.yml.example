@@ -3,8 +3,8 @@
 development:
   adapter: mysql
   database: hhbd
-  username: root
-  password: krasnal
+  username: type_your_user_name_here
+  password: type_your_password_here
   encoding: utf8
   pool: 5
   timeout: 5000
@@ -20,10 +20,10 @@ test:
 
 production:
     adapter: mysql
-    host: sql.jkulak.megiteam.pl
-    database: my_1347
-    username: my_1347a
-    password: jkulak
+    host: 
+    database:
+    username:
+    password:
     encoding: utf8
     pool: 5
     timeout: 5000
