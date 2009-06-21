@@ -1,5 +1,2 @@
 = Work I`m doing on the project =
-== 21 june 2009 ==
-  * modified artist form to edit nicknames
-  * created migration script for artists' nicknames
-  * displaying nicknames on artists' pages
+Log of things I did during programming process...
