@@ -1,6 +1,7 @@
-= List of app functions to be done =
+= List of app functions that needs be implemented =
   # --add artists` nicknames--
-  # add hhbd blog
+  # add hhbd.pl blog
   # add users
   # add users` collections
+   # code generator for embedding user`s collection outside hhbd.pl
   # add users` wishlists
