@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   def admin_layout
-    if true
+    if false
       "admin"
     else
       "application"

@@ -2,7 +2,7 @@
 
 <div id="brief">
 	<h2 class="hide">Informacje podstawowe</h2>
-	<% if !@artist.image.nil?  %>
+	<% if !@artist.image.blank?  %>
 	<div id="photo">
 		<%= image_tag @artist.image.url(:medium), :alt => 'Zdjęcie ' + @artist.name, :class => "image" %>
 		<span id="frame"></span>
@@ -10,14 +10,24 @@
 	</div>
 	<% end %>
 	<ul class="essential">
-		<% if !@artist.realname="" %><li>Imię i nazwisko: <%= @artist.realname %></li><% end %>
-		<% if !@artist.website.empty? %><li>Oficjalna strona internetowa: <%= link_to @artist.website, @artist.website %></li><% end %>
-		<% if !@artist.bands.empty? %>
+		<% if !@artist.realname.blank? %><li>Imię i nazwisko: <%= @artist.realname %></li><% end %>
+		<% if !@artist.website.blank? %><li>Oficjalna strona internetowa: <%= link_to @artist.website, @artist.website %></li><% end %>
+		<% if !@artist.nicknames.blank? %>
+		<li>
+			<%= I18n.t 'layout.artist.nicknames' %>:
+			<ul class="dotted">
+				<% @artist.nicknames.each do |nickname| %>
+					<li><%= nickname.name %></li>
+				<% end %>
+			</ul>
+		</li>
+		<% end %>
+		<% if !@artist.bands.blank? %>
 		<li>
 			<%= I18n.t 'layout.artist.bands' %>: <%= render :partial => "artists/name_list", :object => @artist.bands %>
 		</li>
 		<% end %>
-		<% if !@artist.members.empty? %>
+		<% if !@artist.members.blank? %>
 		<li>
 			<%= I18n.t 'layout.artist.members' %>: <%= render :partial => "artists/name_list", :object => @artist.members %>
 		</li>
@@ -32,15 +42,15 @@
 	</ul>
 	
 	<ul class="other">
-		<% if !@artist.concert_info="" %><li>Info koncertowe: <%= @artist.concert_info %></li><% end %>
-		<% if !@artist.since="" %><li>Istnieje od: <%= @artist.since.year %></li><% end %>
-		<% if !@artist.till="" %><li>Istniało do: <%= @artist.till.year %></li><% end %>
-		<% if !@artist.special="" %><li class="hide">Czy specjalny?: <%= @artist.special %></li><% end %>
-		<% if !@artist.trivia="" %><li>Ciekawostki: <%= @artist.trivia %></li><% end %>
-		<% if !@artist.created_by="" %><li>Utworzony przez: <%= @artist.created_by %></li><% end %>
-		<% if !@artist.updated_by="" %><li>Ostatnio edytowany przez: <%= @artist.updated_by %></li><% end %>
-		<% if !@artist.viewed="" %><li>Oglądany: <%= @artist.viewed %> razy</li><% end %>
-		<% if !@artist.status="" %><li class="hide">Status: <%= @artist.status %></li><% end %>
+		<% if !@artist.concert_info.blank? %><li>Info koncertowe: <%= @artist.concert_info %></li><% end %>
+		<% if !@artist.since.blank? %><li>Istnieje od: <%= @artist.since.year %></li><% end %>
+		<% if !@artist.till.blank? %><li>Istniało do: <%= @artist.till.year %></li><% end %>
+		<% if !@artist.special.blank? %><li class="hide">Czy specjalny?: <%= @artist.special %></li><% end %>
+		<% if !@artist.trivia.blank? %><li>Ciekawostki: <%= @artist.trivia %></li><% end %>
+		<% if !@artist.created_by.blank? %><li>Utworzony przez: <%= @artist.created_by %></li><% end %>
+		<% if !@artist.updated_by.blank? %><li>Ostatnio edytowany przez: <%= @artist.updated_by %></li><% end %>
+		<% if !@artist.viewed.blank? %><li>Oglądany: <%= @artist.viewed %> razy</li><% end %>
+		<% if !@artist.status.blank? %><li class="hide">Status: <%= @artist.status %></li><% end %>
 	</ul>
 </div>
 

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :nicknames
+
   map.resources :band_memberships
   map.resources :track_appearances
   map.resources :songs, :as => 'utwory'

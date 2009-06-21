@@ -21,6 +21,10 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
+	<div id="nicknames">
+	<%= render :partial => 'nickname', :collection => @artist.nicknames, :object => f %>
+	</div>
+	<%= add_nickname_link "Add a nickname" %>
   <p>
     <%= f.submit 'Create' %>
   </p>

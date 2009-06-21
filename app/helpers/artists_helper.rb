@@ -13,4 +13,10 @@ module ArtistsHelper
     menu += "</ul>"
     return menu  
   end
+  
+  def add_nickname_link(name)
+    link_to_function (image_tag("ico-add.png") + name) do |page| 
+  		page.insert_html :bottom, :nicknames, :partial => 'nickname', :object => Nickname.new
+  	end
+  end
 end
