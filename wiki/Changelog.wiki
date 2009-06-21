@@ -1,4 +1,4 @@
-= Work I`m doing =
+= Work I`m doing on the project =
 == 21 june 2009 ==
   * modified artist form to edit nicknames
   * created migration script for artists' nicknames
