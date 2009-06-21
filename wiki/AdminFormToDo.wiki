@@ -1,0 +1,2 @@
+= functions that needs to be implemented into admin`s form =
+  # adding songs within albums` edit form
