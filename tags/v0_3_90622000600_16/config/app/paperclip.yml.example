@@ -1,0 +1,22 @@
+# An app config, provided by App: http://github.com/stephencelis/app
+
+# Paperclip environmental settings
+
+---
+development: &development
+  loaded_at: <%= Time.zone.now.iso8601 %>
+  :paperclip_base_path:
+  # example :paperclip_base_path: /usr/httpd/html/s/imgs/
+  :paperclip_base_url:
+  # example :paperclip_base_url: http://s.kosiarka/imgs/
+  :paperclip_command_path:
+  # example :paperclip_command_path: /opt/local/bin
+
+test:
+  <<: *development
+
+production:
+  loaded_at: <%= Time.zone.now.iso8601 %>
+  :paperclip_base_path: /home/jkulak/www/imgs/
+  :paperclip_base_url: http://s.jkulak.megiteam.pl/
+  :paperclip_command_path: /home/jkulak/www/imagemagick/bin
