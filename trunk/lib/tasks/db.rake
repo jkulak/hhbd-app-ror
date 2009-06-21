@@ -23,5 +23,9 @@ namespace :db do
     puts "Loading www2_sw_development_dump.sql. Enter mysql root password. Just press Enter for none"
     `mysql -uroot -p app_development < app_development_dump.sql`
   end
+  
+  # restor db - do napisania
+  # mysql -h sql.jkulak.megiteam.pl -u my_1347a my_1347 -p < $1
+  # powinien byc odczyt z konfiguracji aplikacji
 
 end
