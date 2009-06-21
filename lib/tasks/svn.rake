@@ -4,8 +4,11 @@ namespace :svn do
   
   # command line usage: rake svn:tag["your commit message", "rc3", 2, 0]
   # for svn copy foobar/trunk foobat/tags/v2_0_dategoeshere_buildnumbergoeshere_rc3 -m "your commit message"
+  
+  # dziala bez parametrow :/ jakos trzeba przeakzac parametry
+  # no i pytanie, jak potem przekazac parametry do invoke???
   desc "Create new tag from trunk increasing build number"
-  task :tag, :message, :description, :major, :minor do |t, args|
+  task :tag do |t, args|
     latest_tag = IO.popen("svn ls #{REPO_PATH}tags").readlines.last.chomp("/\n").split('_')
     
     major = args.major  
@@ -30,18 +33,18 @@ namespace :svn do
   end
   
   desc "Commit changes and create new tag"
-  task :commit_and_create_tag => [:commit] do
+  task :tagit, :message, :description, :major, :minor do
+    Rake::Task["svn:commit"].invoke
     Rake::Task["svn:tag"].invoke
   end
   
-  desc "Shortcut for commit_and_create_tag"
-  task :tagit => :commit_and_create_tag
+  #desc "Shortcut for commit_and_create_tag"
+  #task :tagit => :commit_and_create_tag
   
-  # command line usage: rake db:commit["your commit msg goes here"]
+  # command line usage: rake db:commit["your commit msg goes here"] - OK
   desc "Commit changes adding files before"
   task :commit, :message do |t, args|
     Rake::Task["svn:add"].invoke
-    
     puts "Commiting changes..."
     svn_cmd = "svn ci -m \"#{args.message}\""
     system(svn_cmd)
@@ -66,6 +69,22 @@ namespace :svn do
       printf "Exporting tag: #{latest_tag}\n"
       system("svn export #{REPO_PATH}tags/#{latest_tag}")    
     end
+  end
+  
+  # dziala OK
+  def get_tags_list(repo = REPO_PATH)
+    IO.popen("svn ls #{repo}tags").readlines
+  end
+  
+  # dziala OK
+  def get_latest_build
+    list = get_tags_list
+    p list.last.chomp
+  end
+  
+  # dziala OK
+  task :test do
+    get_latest_build
   end
  
   desc "Configure Subversion for Rails"
