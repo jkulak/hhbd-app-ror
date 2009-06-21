@@ -41,6 +41,7 @@ namespace :svn do
   desc "Commit changes adding files before"
   task :commit, :message do |t, args|
     Rake::Task["svn:add"].invoke
+    
     puts "Commiting changes..."
     svn_cmd = "svn ci -m \"#{args.message}\""
     system(svn_cmd)
