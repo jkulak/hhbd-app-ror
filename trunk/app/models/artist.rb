@@ -6,9 +6,33 @@ class Artist < ActiveRecord::Base
   has_many :has_members, :foreign_key => 'band_id', :class_name => 'BandMembership', :dependent => :destroy
   has_many :members, :through => :has_members
   
+  has_many :nicknames
+  after_update :save_nicknames
+  
   has_attached_file :image, :styles => { :small => "100x", :medium => "300x" },
                     :url  => App::Paperclip.paperclip_base_url + "artists/:id/:style/:basename.:extension",
                     :path => App::Paperclip.paperclip_base_path + "artists/:id/:style/:basename.:extension"
+  
+  def nickname_attributes=(nickname_attributes)
+    nickname_attributes.each do |attributes|
+      if attributes[:id].blank?
+        nicknames.build(attributes)
+      else
+        nickname = nicknames.detect { |n| n.id == attributes[:id].to_i }
+        nickname.attributes = attributes
+      end
+    end
+  end
+  
+  def save_nicknames
+    nicknames.each { |n| 
+      if n.should_destroy? or n.name.blank?
+        n.destroy
+      else
+        n.save(false)
+      end
+    }
+  end
   
   def url_name
      self.name.gsub(/[^[:alnum:]]/,'-') # zamien wszysktkie znaki z name ktore nie sa alfanumeryczna na -

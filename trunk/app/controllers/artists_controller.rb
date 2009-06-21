@@ -32,6 +32,8 @@ class ArtistsController < ApplicationController
   # GET /artists/new.xml
   def new
     @artist = Artist.new
+    #@album.nicknames = {"jedne", "dwa", "trzy"}
+    3.times { @artist.nicknames.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -59,6 +61,10 @@ class ArtistsController < ApplicationController
         format.xml  { render :xml => @artist.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+  def edit
+    @artist = Artist.find(params[:id])
   end
 
   # PUT /artists/1

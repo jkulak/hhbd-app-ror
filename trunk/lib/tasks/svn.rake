@@ -33,7 +33,7 @@ namespace :svn do
   end
   
   desc "Commit changes and create new tag"
-  task :tagit, :message, :description, :major, :minor do
+    task :tagit, :message, :description, :major, :minor do
     Rake::Task["svn:commit"].invoke
     Rake::Task["svn:tag"].invoke
   end
