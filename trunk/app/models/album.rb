@@ -6,9 +6,12 @@ class Album < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "100x100>", :medium => "300x300" },
                     :url  => App::Paperclip.paperclip_base_url + "albums/:id/:style/:basename.:extension",
                     :path => App::Paperclip.paperclip_base_path + "albums/:id/:style/:basename.:extension"
-    
                     
-
+  def media_types
+    # {"CD" => 1, "LP" => 2, "EP" => 3, "MP3" => 4, "MC" => 5, "Inne? Ale jakie???" => 6}
+    {1 => "CD", 2 => "LP", 3 => "EP", 4 => "MP3", 5 => "MC", 6 => "Inne? Ale jakie???"}
+  end
+  
   def url_name
   # callname = input.dup
   #  callname.downcase!

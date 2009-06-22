@@ -11,6 +11,7 @@
 		<li>Premiera: <%=h @album.release_date  %></li>
 		<li>Wytwórnia: <%= label_linking_name(@album.label) %></li>
 		<li>Numer katalogowy: <%= @album.catalog_number %></li>
+		<li>Nośnik: <%= @album.media_types[@album.media] %></li>
 	</ul>
 	
 	<ul class="additional">
