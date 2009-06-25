@@ -14,6 +14,7 @@ class SessionController < ApplicationController
       redirect_back_or_default('/')
       flash[:notice] = 'Zalogowałeś się poprawnie jako: ' + params[:login]
     else
+      flash.now[:error] = 'Błąd logowania!'
       render :action => 'new'
     end
   end
