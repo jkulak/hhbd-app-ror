@@ -51,6 +51,20 @@ ul ul {
 	list-style-type: square;
 }
 
+/* GLOBAL */
+.error {
+	padding: 10px;
+	border: 1px black solid;
+	background: #d5c179;
+	margin-bottom: 10px;
+}
+
+.notice {
+	padding: 10px;
+	border: 1px black solid;
+	background: #d5c179;
+	margin-bottom: 10px;
+}
 /* SITE HEADER */
 
 #header {

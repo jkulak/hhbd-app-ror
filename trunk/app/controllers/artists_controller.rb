@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   # GET /artists
   # GET /artists.xml
   def index

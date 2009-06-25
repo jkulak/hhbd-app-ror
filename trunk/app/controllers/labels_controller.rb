@@ -1,4 +1,5 @@
 class LabelsController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   # GET /labels
   # GET /labels.xml
   def index

@@ -4,6 +4,7 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  include AuthenticatedSystem
   
   helper_method :admin?
 
@@ -15,7 +16,7 @@ class ApplicationController < ActionController::Base
   def authorize
     unless admin?
       flash[:notice] = "Grrr... Are you really an admin mister?"
-      redirect_to _path
+      redirect_to root_path
       false
     end
   end
