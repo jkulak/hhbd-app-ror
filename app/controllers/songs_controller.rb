@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   # GET /songs
   # GET /songs.xml
   def index

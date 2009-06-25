@@ -1,4 +1,5 @@
 class NicknamesController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   # GET /nicknames
   # GET /nicknames.xml
   def index

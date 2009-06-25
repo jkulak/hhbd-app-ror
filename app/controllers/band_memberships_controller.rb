@@ -1,4 +1,5 @@
 class BandMembershipsController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   # GET /band_memberships
   # GET /band_memberships.xml
   def index

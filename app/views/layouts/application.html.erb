@@ -13,8 +13,12 @@
 <%= render :partial => "layouts/menu"%>
 <div id="center">
 	<div id="content">
-		<div class="notice"><%= flash[:notice] %></div>
-		<div class="error"><%= flash[:error] %></div>
+		<% if flash[:notice] %>
+			<div class="notice"><%= flash[:notice] %></div>
+		<% end %>
+		<% if flash[:error] %>		
+			<div class="error"><%= flash[:error] %></div>
+		<% end %>
 		<%= yield :layout %>
 	</div>
 </div>

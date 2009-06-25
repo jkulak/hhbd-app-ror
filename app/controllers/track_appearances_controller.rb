@@ -1,4 +1,5 @@
 class TrackAppearancesController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   # GET /track_appearances
   # GET /track_appearances.xml
   def index

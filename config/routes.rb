@@ -1,12 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :nicknames
+  map.resources :users
 
+  map.resource :session, :controller => 'session'
+
+  map.resources :nicknames
   map.resources :band_memberships
   map.resources :track_appearances
   map.resources :songs, :as => 'utwory'
   map.resources :labels, :as => 'wytwornie'
   map.resources :artists, :as => 'wykonawcy'
-  map.resources :albums, :as => 'albumy'  
+  map.resources :albums, :as => 'albumy'
+  
+  # map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
+  
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.login '/login', :controller => 'session', :action => 'new'
+  map.logout '/logout', :controller => 'session', :action => 'destroy'
+  
 
   # Sample resource route within a namespace:
      map.namespace :admin do |admin|
