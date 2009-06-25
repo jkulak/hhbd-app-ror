@@ -15,13 +15,13 @@ class ApplicationController < ActionController::Base
   
   def authorize
     unless admin?
-      flash[:notice] = "Grrr... Are you really an admin mister?"
+      flash[:notice] = "Grrr... Czy na pewno masz do tego uprawnienia?"
       redirect_to root_path
       false
     end
   end
   
   def admin?
-    false 
+    authorized?
   end
 end

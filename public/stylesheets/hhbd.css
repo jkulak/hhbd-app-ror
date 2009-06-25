@@ -26,6 +26,7 @@ a:hover {
 body {
 	font-family: "trebuchet ms", Georgia;
 	background-color: #F6F4E8;
+	position: relative;
 }
 
 ul ul {
@@ -45,6 +46,13 @@ ul ul {
 .dotted {
 
 }
+.left {
+	float: left;
+}
+
+li.last {
+	padding-right: 0 !important;
+}
 
 .dotted li {
 	margin-left: 15px;
@@ -54,14 +62,12 @@ ul ul {
 /* GLOBAL */
 .error {
 	padding: 10px;
-	border: 1px black solid;
 	background: #d5c179;
 	margin-bottom: 10px;
 }
 
 .notice {
 	padding: 10px;
-	border: 1px black solid;
 	background: #d5c179;
 	margin-bottom: 10px;
 }
@@ -86,6 +92,23 @@ ul ul {
 	text-decoration: none;
 }
 
+
+ul#userfloat {
+	position: absolute;
+	top: 0;
+	right: 30px;
+	background: #ebe0c0;
+	padding: 4px;
+	border: 3px #d5c179 solid;
+	border-top-width: 0;
+	font-size: 13px;
+}
+
+#userfloat li {
+	float: left;
+	padding-right: 10px;
+}
+
 /* MAIN HORIZONTAL MENU */
 
 #menu {
@@ -96,7 +119,7 @@ ul ul {
 
 #menu ul {
 	float: right;
-	width: 100%;
+	width: auto;
 	padding: 10px 10px 10px 0;
 }
 

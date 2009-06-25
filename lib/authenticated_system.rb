@@ -31,7 +31,7 @@ module AuthenticatedSystem
     #    current_user.login != "bob"
     #  end
     def authorized?
-      logged_in?
+      logged_in? and current_user.is_admin
     end
 
     # Filter method to enforce a login requirement.
