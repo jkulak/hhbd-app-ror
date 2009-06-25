@@ -5,7 +5,8 @@
 <%= render :partial => "artists/list", :object => @artists %>
 
 <%= artist_menu_letters(params[:l]) %>
-
-<div class="admin">
-<%= link_to 'Dodaj wykonawcę', new_artist_path %>
-</div>
+<% if admin? %>
+	<div class="admin">
+	<%= link_to 'Dodaj wykonawcę', new_artist_path %>
+	</div>
+<% end %>

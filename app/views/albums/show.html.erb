@@ -37,7 +37,8 @@
 		<li>trzeci</li>
 	</ul>
 </div>
-
+<% if admin? %>
 <div class="admin">
 	<%= link_to 'Edytuj album', edit_album_path(@album) %>
 </div>
+<% end %>

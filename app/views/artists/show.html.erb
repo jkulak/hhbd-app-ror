@@ -77,7 +77,8 @@
 		<li>trzeci</li>
 	</ul>
 </div>
-
-<div class="admin">
-<%= link_to 'Edytuj wykonawcę', edit_artist_path(@artist) %>
-</div>
+	<% if admin? %>
+	<div class="admin">
+	<%= link_to 'Edytuj wykonawcę', edit_artist_path(@artist) %>
+	</div>
+<% end %>
