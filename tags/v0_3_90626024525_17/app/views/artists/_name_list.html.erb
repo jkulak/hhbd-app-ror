@@ -1,0 +1,9 @@
+<ul class="dotted">
+<% object.each do |artist| %>
+	<li><%= link_to artist.name, artist_path(artist, :html) %></li>
+		<div class="admin">Admin: <%= link_to 'Edytuj', edit_artist_path(artist) %> |
+			<%= link_to 'Usuń', artist, :confirm => 'Na pewno?', :method => :delete %>
+		</div>     
+	</li>
+<% end %>
+</ul>
