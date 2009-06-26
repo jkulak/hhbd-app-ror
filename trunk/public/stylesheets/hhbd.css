@@ -60,10 +60,20 @@ li.last {
 }
 
 /* GLOBAL */
-.error {
+.error, .errorExplanation {
 	padding: 10px;
-	background: #d5c179;
+	background: #BE2311;
 	margin-bottom: 10px;
+	color: white;
+}
+
+.errorExplanation ul {
+
+	margin-left: 20px;
+}
+
+.errorExplanation ul li {
+	list-style-type: decimal;
 }
 
 .notice {
@@ -71,6 +81,10 @@ li.last {
 	background: #d5c179;
 	margin-bottom: 10px;
 }
+
+
+
+
 /* SITE HEADER */
 
 #header {

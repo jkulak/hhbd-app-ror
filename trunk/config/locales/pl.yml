@@ -9,6 +9,21 @@ pl:
             solo_albums: "Wydane albumy"
             albums: "Albumy wydane w projektach"
             nicknames: "Znany także jako"
+            
+    activerecord:
+      errors:
+        template:
+          body: 'Musisz poprawić kilka błędów:'
+          header: 'Uuuu...'
+        models:
+          user:
+            attributes:
+              password:
+                confirmation: 'Wpisane hasła różnią się od siebie, wpisz takie same!'
+                too_short: 'Wpisane hasło jest za krótkie'
+              email:
+                taken: 'jest już zarejestrowany w naszej bazie, podaj inny, lub zaloguj się używając podanego.'
+                invalid: 'nie jest poprawny. Wpisz poprawny adres email.'
         
         
     date:
