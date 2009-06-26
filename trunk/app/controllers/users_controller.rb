@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     # protects against session fixation attacks, wreaks havoc with 
     # request forgery protection.
     # uncomment at your own risk
-    # reset_session
+    reset_session
     @user = User.new(params[:user])
     @user.save
     if @user.errors.empty?
