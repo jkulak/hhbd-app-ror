@@ -3,7 +3,8 @@
 <%= song_menu_letters(params[:l]) %>
 
 <%= render :partial => "songs/list", :object => @songs %>
-
-<div class="admin">
-<%= link_to 'Dodaj utwór', new_song_path %>
-</div>
+<% if admin? %>
+	<div class="admin">
+	<%= link_to 'Dodaj utwór', new_song_path %>
+	</div>
+<% end %>
