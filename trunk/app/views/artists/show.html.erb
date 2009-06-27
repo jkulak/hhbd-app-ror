@@ -37,8 +37,6 @@
 	<ul class="additional">
 		<li class="hide">W chcęliście: <%= @artist.created_at %></li>
 		<li class="hide">W kolekcji: <%= @artist.created_at %></li>
-		<li>Dodany: <%= @artist.created_at.strftime("%d %B %Y") %></li>
-		<li class="hide">Wyświetleń: <%= @artist.created_at %></li>
 	</ul>
 	
 	<ul class="other">
@@ -47,9 +45,13 @@
 		<% if !@artist.till.blank? %><li>Istniało do: <%= @artist.till.year %></li><% end %>
 		<% if !@artist.special.blank? %><li class="hide">Czy specjalny?: <%= @artist.special %></li><% end %>
 		<% if !@artist.trivia.blank? %><li>Ciekawostki: <%= @artist.trivia %></li><% end %>
-		<% if !@artist.created_by.blank? %><li>Utworzony przez: <%= @artist.created_by %></li><% end %>
-		<% if !@artist.updated_by.blank? %><li>Ostatnio edytowany przez: <%= @artist.updated_by %></li><% end %>
-		<% if !@artist.viewed.blank? %><li>Oglądany: <%= @artist.viewed %> razy</li><% end %>
+		<li>Dodany: <%= @artist.created_at.strftime('%d %B %Y') %></li>
+		<li>Dodany przez: <%= @artist.creator.login %></li>
+		<% if admin? %>
+			<% if !@artist.updated_at.nil? %><li>Ostatnio edytowany: <%= @artist.updated_at.strftime('%d %B %Y') %></li><% end %>
+			<% if !@artist.editor.blank? %><li>Ostatnio edytowany przez: <%= @artist.editor.login %></li><% end %>
+			<li>Wyświetleń: <%= @artist.viewed %></li>
+		<% end %>
 		<% if !@artist.status.blank? %><li class="hide">Status: <%= @artist.status %></li><% end %>
 	</ul>
 </div>

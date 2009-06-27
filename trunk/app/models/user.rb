@@ -2,6 +2,16 @@ require 'digest/sha1'
 class User < ActiveRecord::Base
   has_many :albums, :foreign_key => "created_by"
   has_many :albums, :foreign_key => "updated_by"
+  
+  has_many :artists, :foreign_key => "created_by"
+  has_many :artists, :foreign_key => "updated_by"
+  
+  has_many :labels, :foreign_key => "created_by"
+  has_many :labels, :foreign_key => "updated_by"
+  
+  has_many :songs, :foreign_key => "created_by"
+  has_many :songs, :foreign_key => "updated_by"
+  
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 

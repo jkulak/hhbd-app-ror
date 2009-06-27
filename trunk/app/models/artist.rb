@@ -12,6 +12,9 @@ class Artist < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "100x", :medium => "300x" },
                     :url  => App::Paperclip.paperclip_base_url + "artists/:id/:style/:basename.:extension",
                     :path => App::Paperclip.paperclip_base_path + "artists/:id/:style/:basename.:extension"
+                    
+  belongs_to :creator, :class_name => "User", :foreign_key => "created_by"
+  belongs_to :editor, :class_name => "User", :foreign_key => "updated_by"
   
   def nickname_attributes=(nickname_attributes)
     nickname_attributes.each do |attributes|

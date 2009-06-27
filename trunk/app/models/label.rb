@@ -4,6 +4,8 @@ class Label < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "100x", :medium => "300x" },
                     :url  => App::Paperclip.paperclip_base_url + "labels/:id/:style/:basename.:extension",
                     :path => App::Paperclip.paperclip_base_path + "labels/:id/:style/:basename.:extension"
+  belongs_to :creator, :class_name => "User", :foreign_key => "created_by"
+  belongs_to :editor, :class_name => "User", :foreign_key => "updated_by"
   
   def url_name
      self.name.gsub(/[^[:alnum:]]/,'-') # zamien wszysktkie znaki z name ktore nie sa alfanumeryczna na -
