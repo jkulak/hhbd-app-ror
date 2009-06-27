@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-      @albums = Album.newest
-      @albumscomming = Album.last
+      @recent_albums = Album.recent(3)
+      @incoming_albums = Album.incoming(3)
       
       @albums_count = Album.count;
       @artists_count = Artist.count;

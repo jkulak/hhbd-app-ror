@@ -5,12 +5,13 @@
 			<ul class="info">
 				<li><%= link_to label.name, label_path(label, :html) %></li>
 				<li>Strona: <%= label.website %></li>
-				<li>Wydanych albumów: <%= label.albums.count %></li>
+				<% if label.albums.count > 0 %><li>Wydanych albumów: <%= label.albums.count %></li><% end %>
 			</ul>
-  		
-		<div class="admin">Admin: <%= link_to 'Edytuj', edit_label_path(label) %> |
-			<%= link_to 'Usuń', label, :confirm => 'Na pewno?', :method => :delete %>
-		</div>     
+  	<% if admin? %>
+			<div class="admin">Admin: <%= link_to 'Edytuj', edit_label_path(label) %> |
+				<%= link_to 'Usuń', label, :confirm => 'Na pewno?', :method => :delete %>
+			</div>
+		<% end %>
 	</li>
 <% end %>
 </ul>

@@ -8,17 +8,22 @@
 	</div>
 	<ul class="essential">
 		<li>Wykonawca: <%= artist_linking_name(@album.artist) %></li>
-		<li>Premiera: <%=h @album.release_date  %></li>
+		<% if @album.release_date? %><li><% if @album.released? %>Data<% else %>Planowana data<% end %> wydania: <%= @album.premiere %></li><% end %>
 		<li>Wytwórnia: <%= label_linking_name(@album.label) %></li>
-		<li>Numer katalogowy: <%= @album.catalog_number %></li>
-		<li>Nośnik: <%= @album.media_types[@album.media] %></li>
+		<% if !@album.catalog_number.empty? %><li>Numer katalogowy: <%= @album.catalog_number %></li><% end %>
+		<% if !@album.media_types[@album.media].nil? %><li>Nośnik: <%= @album.media_types[@album.media] %></li><% end %>
 	</ul>
 	
 	<ul class="additional">
 		<li class="hide">W chcęliście: <%= @album.created_at %></li>
 		<li class="hide">W kolekcji: <%= @album.created_at %></li>
-		<li>Dodany: <%= @album.created_at %></li>
-		<li class="hide">Wyświetleń: <%= @album.created_at %></li>
+		<li>Dodany: <%= @album.created_at.strftime('%d %B %Y') %></li>
+		<li>Dodany przez: <%= @album.creator.login %></li>
+		<% if admin? %>
+			<% if !@album.updated_at.nil? %><li>Ostatnio edytowany: <%= @album.updated_at.strftime('%d %B %Y') %></li><% end %>
+			<% if !@album.editor.login.nil? %><li>Ostatnio edytowany przez: <%= @album.editor.login %></li><% end %>
+			<li>Wyświetleń: <%= @album.viewed %></li>
+		<% end %>
 	</ul>
 
 </div>

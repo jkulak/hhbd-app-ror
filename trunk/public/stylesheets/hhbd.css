@@ -237,10 +237,10 @@ ul#userfloat {
 .tracklist {
 	float: left;
 	width: 100%;
+	margin-bottom: 10px;
 }
 
 .tracklist li {
-	list-style-type: decimal-leading-zero;
 	clear: both;
 	margin: 2px;
 	position: relative;

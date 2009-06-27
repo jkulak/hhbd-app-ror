@@ -7,7 +7,7 @@
 		</a>
 			<ul class="info">
 				<li><%= link_to artist.name, artist_path(artist, :html) %></li>
-				<li>Albumów: <%= artist.albums.count %></li>
+				<% if artist.albums.count > 0 %><li>Albumów: <%= artist.albums.count %></li><% end %>
 			</ul>
 		<% if admin? %>
 		<div class="admin">Admin: <%= link_to 'Edytuj', edit_artist_path(artist) %> |

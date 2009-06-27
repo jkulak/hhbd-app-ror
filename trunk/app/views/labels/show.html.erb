@@ -32,6 +32,8 @@
 	</ul>
 </div>
 
-<div class="admin">
-<%= link_to 'Edytuj wytwórnię', edit_label_path(@label) %>
-</div>
+<% if admin? %>
+	<div class="admin">
+	<%= link_to 'Edytuj wytwórnię', edit_label_path(@label) %>
+	</div>
+<% end %>
