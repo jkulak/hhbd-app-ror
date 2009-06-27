@@ -13,7 +13,7 @@
 		<li class="hide">W chcęliście: <%= @label.created_at %></li>
 		<li class="hide">W kolekcji: <%= @label.created_at %></li>
 		<li>Dodany: <%= @label.created_at.strftime('%d %B %Y') %></li>
-		<li>Dodany przez: <%= @label.creator.login %></li>
+		<% if !@label.creator.blank? %><li>Dodany przez: <%= @label.creator.login %></li><% end %>
 		<% if admin? %>
 			<% if !@label.updated_at.nil? %><li>Ostatnio edytowany: <%= @label.updated_at.strftime('%d %B %Y') %></li><% end %>
 			<% if !@label.editor.blank? %><li>Ostatnio edytowany przez: <%= @label.editor.login %></li><% end %>
