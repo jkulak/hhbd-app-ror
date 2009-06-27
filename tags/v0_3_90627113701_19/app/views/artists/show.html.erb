@@ -1,0 +1,86 @@
+<h1><%=h @artist.name %></h1>
+
+<div id="brief">
+	<h2 class="hide">Informacje podstawowe</h2>
+	<% if !@artist.image.blank?  %>
+	<div id="photo">
+		<%= image_tag @artist.image.url(:medium), :alt => 'Zdjęcie ' + @artist.name, :class => "image" %>
+		<span id="frame"></span>
+		<span id="info">Zdjęcie:&nbsp;<%= link_to @artist.image_source, @artist.image_source_url %></span>
+	</div>
+	<% end %>
+	<ul class="essential">
+		<% if !@artist.realname.blank? %><li>Imię i nazwisko: <%= @artist.realname %></li><% end %>
+		<% if !@artist.website.blank? %><li>Oficjalna strona internetowa: <%= link_to @artist.website, @artist.website %></li><% end %>
+		<% if !@artist.nicknames.blank? %>
+		<li>
+			<%= I18n.t 'layout.artist.nicknames' %>:
+			<ul class="dotted">
+				<% @artist.nicknames.each do |nickname| %>
+					<li><%= nickname.name %></li>
+				<% end %>
+			</ul>
+		</li>
+		<% end %>
+		<% if !@artist.bands.blank? %>
+		<li>
+			<%= I18n.t 'layout.artist.bands' %>: <%= render :partial => "artists/name_list", :object => @artist.bands %>
+		</li>
+		<% end %>
+		<% if !@artist.members.blank? %>
+		<li>
+			<%= I18n.t 'layout.artist.members' %>: <%= render :partial => "artists/name_list", :object => @artist.members %>
+		</li>
+		<% end %>
+	</ul>
+	
+	<ul class="additional">
+		<li class="hide">W chcęliście: <%= @artist.created_at %></li>
+		<li class="hide">W kolekcji: <%= @artist.created_at %></li>
+	</ul>
+	
+	<ul class="other">
+		<% if !@artist.concert_info.blank? %><li>Info koncertowe: <%= @artist.concert_info %></li><% end %>
+		<% if !@artist.since.blank? %><li>Istnieje od: <%= @artist.since.year %></li><% end %>
+		<% if !@artist.till.blank? %><li>Istniało do: <%= @artist.till.year %></li><% end %>
+		<% if !@artist.special.blank? %><li class="hide">Czy specjalny?: <%= @artist.special %></li><% end %>
+		<% if !@artist.trivia.blank? %><li>Ciekawostki: <%= @artist.trivia %></li><% end %>
+		<li>Dodany: <%= @artist.created_at.strftime('%d %B %Y') %></li>
+		<li>Dodany przez: <%= @artist.creator.login %></li>
+		<% if admin? %>
+			<% if !@artist.updated_at.nil? %><li>Ostatnio edytowany: <%= @artist.updated_at.strftime('%d %B %Y') %></li><% end %>
+			<% if !@artist.editor.blank? %><li>Ostatnio edytowany przez: <%= @artist.editor.login %></li><% end %>
+			<li>Wyświetleń: <%= @artist.viewed %></li>
+		<% end %>
+		<% if !@artist.status.blank? %><li class="hide">Status: <%= @artist.status %></li><% end %>
+	</ul>
+</div>
+
+<div id="main">
+	<% if !@artist.description.empty? %>
+	<h2>Biografia</h2>
+	<p class="info"><%= @artist.description %></p>
+	<% end %>
+	
+	<% if !@artist.albums.empty? %>
+	<h2><%= I18n.t 'layout.artist.solo_albums' %><% if !@artist.bands.empty? %> solo<% end %></h2>
+	<%= render :partial => "albums/list", :object => @artist.albums %>
+	<% end %>
+	
+	<% if !@group_albums.empty? %>
+	<h2><%= I18n.t 'layout.artist.albums' %></h2>
+	<%= render :partial => "albums/list", :object => @group_albums %>
+	<% end %>
+	
+	<h2 class="hide">Komentarze</h2>
+	<ul id="comments" class="hide">
+		<li>pierwszy</li>
+		<li>drugi</li>
+		<li>trzeci</li>
+	</ul>
+</div>
+	<% if admin? %>
+	<div class="admin">
+	<%= link_to 'Edytuj wykonawcę', edit_artist_path(@artist) %>
+	</div>
+<% end %>

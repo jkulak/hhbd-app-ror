@@ -1,0 +1,39 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pl:
+    layout:
+        artist:
+            members: "Skład"
+            bands: "W projektach"
+            solo_albums: "Wydane albumy"
+            albums: "Albumy wydane w projektach"
+            nicknames: "Znany także jako"
+            
+    activerecord:
+      errors:
+        template:
+          body: 'Musisz poprawić kilka błędów:'
+          header: 'Uuuu...'
+        models:
+          user:
+            attributes:
+              password:
+                confirmation: 'Wpisane hasła różnią się od siebie, wpisz takie same!'
+                too_short: 'Wpisane hasło jest za krótkie'
+              email:
+                taken: 'jest już zarejestrowany w naszej bazie, podaj inny, lub zaloguj się używając podanego.'
+                invalid: 'nie jest poprawny. Wpisz poprawny adres email.'
+        
+        
+    date:
+        format:
+            default: "%Y-%m-%d"
+            short: "%e %b"
+            long: "%d %B %Y"
+            only_day: "%e"
+        day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+        abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+        month_names: [~, stycznia, lutego, marca, kwietnia, maja, czerwca, lipca, sierpnia, września, października, listopada, grudnia]
+        abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+        order: [ :year, :month, :day ]

@@ -1,0 +1,52 @@
+<h1><%=h @album.artist.name %> - <%=h @album.name %></h1>
+
+<div id="brief">
+	<h2 class="hide">Informacje podstawowe</h2>
+	<div id="picture">
+	<%= image_tag @album.image.url(:medium), :alt => 'Okładka albumu ' + @album.artist.name + ' - ' + @album.name, :class => "image" %>
+		<span id="case"></span>
+	</div>
+	<ul class="essential">
+		<li>Wykonawca: <%= artist_linking_name(@album.artist) %></li>
+		<% if @album.release_date? %><li><% if @album.released? %>Data<% else %>Planowana data<% end %> wydania: <%= @album.premiere %></li><% end %>
+		<li>Wytwórnia: <%= label_linking_name(@album.label) %></li>
+		<% if !@album.catalog_number.empty? %><li>Numer katalogowy: <%= @album.catalog_number %></li><% end %>
+		<% if !@album.media_types[@album.media].nil? %><li>Nośnik: <%= @album.media_types[@album.media] %></li><% end %>
+	</ul>
+	
+	<ul class="additional">
+		<li class="hide">W chcęliście: <%= @album.created_at %></li>
+		<li class="hide">W kolekcji: <%= @album.created_at %></li>
+		<li>Dodany: <%= @album.created_at.strftime('%d %B %Y') %></li>
+		<% if !@album.creator.blank? %><li>Dodany przez: <%= @album.creator.login %></li><% end %>
+		<% if admin? %>
+			<% if !@album.updated_at.nil? %><li>Ostatnio edytowany: <%= @album.updated_at.strftime('%d %B %Y') %></li><% end %>
+			<% if !@album.editor.blank? %><li>Ostatnio edytowany przez: <%= @album.editor.login %></li><% end %>
+			<li>Wyświetleń: <%= @album.viewed %></li>
+		<% end %>
+	</ul>
+
+</div>
+
+<div id="main">
+<% if !@album.songs.blank? %>
+	<h2>Lista utworów</h2>
+	<%= render :partial => "songs/list", :object => @album.songs %>
+<% end %>
+<% if !@album.description.blank? %>
+	<h2>Opis produkcji</h2>
+	<div class="info"><%= @album.description %></div>
+<% end %>
+	
+	<h2 class="hide">Komentarze</h2>
+	<ul id="comments" class="hide">
+		<li>pierwszy</li>
+		<li>drugi</li>
+		<li>trzeci</li>
+	</ul>
+</div>
+<% if admin? %>
+<div class="admin">
+	<%= link_to 'Edytuj album', edit_album_path(@album) %>
+</div>
+<% end %>

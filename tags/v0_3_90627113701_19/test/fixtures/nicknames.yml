@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 
+  artist_id: 1
+  created_by: 
+  updated_by: 
+
+two:
+  name: 
+  artist_id: 1
+  created_by: 
+  updated_by: 

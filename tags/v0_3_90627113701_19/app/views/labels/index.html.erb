@@ -1,0 +1,13 @@
+<h1>Lista wytwórni<% if !params[:l].nil? %> [<span class="uppercase"><%= params[:l] %>]</span><% end %></h1>
+
+<%= label_menu_letters(params[:l]) %>
+
+<%= render :partial => "labels/list", :object => @labels %>
+
+<%= label_menu_letters(params[:l]) %>
+
+<% if admin? %>
+	<div class="admin">
+	<%= link_to 'Dodaj wytwórnię', new_label_path %>
+	</div>
+<% end %>

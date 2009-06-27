@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @nickname.name %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%=h @nickname.artist_id %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%=h @nickname.created_by %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%=h @nickname.updated_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_nickname_path(@nickname) %> |
+<%= link_to 'Back', nicknames_path %>

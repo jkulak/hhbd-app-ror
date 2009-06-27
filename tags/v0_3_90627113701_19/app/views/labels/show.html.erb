@@ -1,0 +1,44 @@
+<h1><%=h @label.name %></h1>
+
+<div id="brief">
+	<h2 class="hide">Informacje podstawowe</h2>
+	<%= image_tag @label.image.url(:medium), :alt => 'Logo ' + @label.name, :class => "image" %>
+	
+	<ul class="essential">
+		<% if !@label.website.blank? %><li>Oficjalna strona internetowa: <%=h @label.website %></li><% end %>
+		<% if !@label.email.blank? %><li>Email: <%=h @label.email %></li><% end %>
+	</ul>
+	
+	<ul class="additional">
+		<li class="hide">W chcęliście: <%= @label.created_at %></li>
+		<li class="hide">W kolekcji: <%= @label.created_at %></li>
+		<li>Dodany: <%= @label.created_at.strftime('%d %B %Y') %></li>
+		<li>Dodany przez: <%= @label.creator.login %></li>
+		<% if admin? %>
+			<% if !@label.updated_at.nil? %><li>Ostatnio edytowany: <%= @label.updated_at.strftime('%d %B %Y') %></li><% end %>
+			<% if !@label.editor.blank? %><li>Ostatnio edytowany przez: <%= @label.editor.login %></li><% end %>
+			<li>Wyświetleń: <%= @label.viewed %></li>
+		<% end %>
+	</ul>
+</div>
+
+<div id="main">
+	<h2>Profil wytwórni</h2>
+	<div class="info"><%= @label.description %></div>
+	
+	<h2>Lista wydanych albumów</h2>
+	<%= render :partial => "albums/list", :object => @label.albums %>
+
+	<h2 class="hide">Komentarze</h2>
+	<ul id="comments" class="hide">
+		<li>pierwszy</li>
+		<li>drugi</li>
+		<li>trzeci</li>
+	</ul>
+</div>
+
+<% if admin? %>
+	<div class="admin">
+	<%= link_to 'Edytuj wytwórnię', edit_label_path(@label) %>
+	</div>
+<% end %>
