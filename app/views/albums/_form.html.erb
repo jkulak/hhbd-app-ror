@@ -21,6 +21,10 @@
     <%= f.label :release_date %><br />
     <%= f.date_select :release_date, {:include_blank => true}, :class => "date" %>
   </p>
+  <p>
+    <%= f.label :to_be_released %><br />
+    <%= f.text_field :to_be_released %>
+  </p>
 	<p>Nośnik: 
 		<%  @album.media_types.each do |id, name| %>
 			<%= f.radio_button "media", id %>

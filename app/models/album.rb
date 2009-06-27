@@ -6,6 +6,8 @@ class Album < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "100x100>", :medium => "300x300" },
                     :url  => App::Paperclip.paperclip_base_url + "albums/:id/:style/:basename.:extension",
                     :path => App::Paperclip.paperclip_base_path + "albums/:id/:style/:basename.:extension"
+  belongs_to :creator, :class_name => "User", :foreign_key => "created_by"
+  belongs_to :editor, :class_name => "User", :foreign_key => "updated_by"
                     
   def media_types
     # {"CD" => 1, "LP" => 2, "EP" => 3, "MP3" => 4, "MC" => 5, "Inne? Ale jakie???" => 6}
@@ -29,6 +31,18 @@ class Album < ActiveRecord::Base
     find(:all, :order => :release_date)
   end
   
+  def released?
+     release_date.to_time < Time.now
+  end
+  
+  def premiere
+     self.released? ? release_date.strftime('%d %B %Y') : (to_be_released?) ? to_be_released : release_date.strftime('%d %B %Y')
+   end
+  #  
+  #  def release_date?
+  #    !@release_date.nil?
+  #  end
+  
   def self.newest
     find(:all, :order => :created_at, :limit => 2)
   end
@@ -37,12 +51,20 @@ class Album < ActiveRecord::Base
     find(:all, :limit => 2, :order => :name)
   end
   
+  def self.incoming(count)
+    find(:all, :limit => count, :order => :release_date, :conditions => ['release_date > ?', Time.now] )
+  end
+  
+  def self.recent(count)
+    find(:all, :limit => count, :order => "release_date desc", :conditions => ['release_date <= ?', Time.now])
+  end
+  
   def self.find_by_first_letter(letter)
     find(:all, :conditions => ['ucase(left(name, 1)) = ?', letter])
   end
   
   def self.group_albums(bands_ids)
-    find(:all, :conditions => ['artist_id in(?)', bands_ids], :order => :release_date )
+    find(:all, :conditions => ['artist_id in(?)', bands_ids], :order => "release_date desc" )
   end
   
   def to_param
