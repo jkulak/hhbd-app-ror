@@ -1,0 +1,14 @@
+<div class="nickname">
+	<% fields_for "artist[nickname_attributes][]", nickname do |f| %> 
+		<p>
+			Nickname: <%= f.text_field :name, :index => nil %>
+			<% if nickname.new_record? %>
+				<%= link_to_function (image_tag("ico-del.png") + "Usuń", "this.up('.task').remove()") %>
+			<% else %>
+				<%= link_to_function (image_tag("ico-del.png") + "Usuń", "mark_for_destroy(this)") %>
+				<%= f.hidden_field :id, :index => nil %>
+				<%= f.hidden_field :should_destroy, :index => nil, :class => 'should_destroy' %>
+			<% end %>
+		</p>
+	<% end %>
+</div>
