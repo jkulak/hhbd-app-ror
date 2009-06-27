@@ -46,7 +46,7 @@
 		<% if !@artist.special.blank? %><li class="hide">Czy specjalny?: <%= @artist.special %></li><% end %>
 		<% if !@artist.trivia.blank? %><li>Ciekawostki: <%= @artist.trivia %></li><% end %>
 		<li>Dodany: <%= @artist.created_at.strftime('%d %B %Y') %></li>
-		<li>Dodany przez: <%= @artist.creator.login %></li>
+		<% if !@artist.creator.blank? %><li>Dodany przez: <%= @artist.creator.login %></li><% end %>
 		<% if admin? %>
 			<% if !@artist.updated_at.nil? %><li>Ostatnio edytowany: <%= @artist.updated_at.strftime('%d %B %Y') %></li><% end %>
 			<% if !@artist.editor.blank? %><li>Ostatnio edytowany przez: <%= @artist.editor.login %></li><% end %>
