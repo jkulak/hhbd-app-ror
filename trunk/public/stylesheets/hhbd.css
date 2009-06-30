@@ -170,7 +170,9 @@ ul#userfloat {
 	width: 348px;
 	height: 418px;
 	position: relative;
-	@todo: poprawic overflow, tak, zeby na Czekonie zdjecie chowalo sie w ramce;
+	/*
+		TODO poprawic overflow, tak, zeby na Czekonie zdjecie chowalo sie w ramce;
+	*/ 
 	overflow: hidden;
 }
 
