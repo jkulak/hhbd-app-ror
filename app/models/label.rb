@@ -15,6 +15,12 @@ class Label < ActiveRecord::Base
     find(:all, :conditions => ['ucase(left(name, 1)) = ?', letter])
   end
   
+  # do wyszukiwarki
+  # do wyswietlania po literkach?
+  def self.search(param)
+    find(:all, :order => "name asc", :conditions => ['name LIKE ?', "%#{param}%"])
+  end
+  
   def self.all_for_select
     self.find(:all, :order => "name").map { |x| [x.name, x.id] }
   end

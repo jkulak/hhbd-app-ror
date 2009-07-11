@@ -43,6 +43,13 @@ class Artist < ActiveRecord::Base
     find(:all, :order => "name asc", :conditions => ['name LIKE ?', "%#{param}%"])
   end
   
+  def self.full_search(param)
+    @result = self.search(param)
+    # wyszukiwaine po nickach
+    @result += Artist.all(:include => "nicknames", :conditions => ['nicknames.name LIKE ?', "%#{param}%"])
+    @result.uniq
+  end
+  
   def url_name
      self.name.gsub(/[^[:alnum:]]/,'-') # zamien wszysktkie znaki z name ktore nie sa alfanumeryczna na -
   end
@@ -54,11 +61,12 @@ class Artist < ActiveRecord::Base
   def self.find_by_first_letter(letter)
          @artists = find(:all, :conditions => ['ucase(left(name, 1)) = ?', letter])
   end
-   
+  
   def to_param
     "#{id}-#{url_name}"
   end
-   
+  
+  # TODO przeniesc to do view (tak jak bylo zrobione w railscascie)
   def self.all_for_select
     self.find(:all, :order => "name").map { |x| [x.name, x.id] }
   end

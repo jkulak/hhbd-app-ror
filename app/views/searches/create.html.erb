@@ -1,8 +1,39 @@
+<div id="searchres">
 <h1>Wyniki wyszukiwania: "<%= params[:q] %>"</h1>
+
+<% if !@artist_search.blank? %>
 <h2>Wykonawcy:</h2>
-<uk>
+<ul>
 <% @artist_search.each do |result| %>
-  <li><%= link_to highlight(result.name, params[:q], :highlighter => '<strong class="highlight">\1</strong>'), artist_path(result, :html) %></li>
-<!-- kolejne listy wynikow tutaj, dla albumow i wytworni -->
+  <li><%= link_to highlight(result.name + (result.nicknames.empty? ? "" : " (" + result.nicknames.collect{|x| x.name}.join(", ") + ")") , params[:q], :highlighter => '<strong class="highlight">\1</strong>'), artist_path(result, :html) %></li>
 <% end %>
-</uk>
+</ul>
+<% end %>
+
+<% if !@album_search.blank? %>
+<h2>Albumy:</h2>
+<ul>
+<% @album_search.each do |result| %>
+  <li><%= link_to highlight(result.artist.name + " - " + result.name, params[:q], :highlighter => '<strong class="highlight">\1</strong>'), album_path(result, :html) %></li>
+<% end %>
+</ul>
+<% end %>
+
+<% if !@label_search.blank? %>
+<h2>Wytwórnie:</h2>
+<ul>
+<% @label_search.each do |result| %>
+  <li><%= link_to highlight(result.name, params[:q], :highlighter => '<strong class="highlight">\1</strong>'), label_path(result, :html) %></li>
+<% end %>
+</ul>
+<% end %>
+
+<% if !@article_search.blank? %>
+<h2>Newsy:</h2>
+<ul>
+<% @article_search.each do |result| %>
+  <li><%= link_to highlight(result.title, params[:q], :highlighter => '<strong class="highlight">\1</strong>'), article_path(result, :html) %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
