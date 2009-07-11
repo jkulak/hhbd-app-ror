@@ -1,17 +1,18 @@
 class ArtistsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
-  # GET /artists
-  # GET /artists.xml
+  
   def index
     if (params[:l].nil?)
+      # TODO przeniesc zmienicapytanie wyszukujace do modelu, i zmienic tu na Artist.search
       @artists = Artist.all(:order => 'created_at desc', :conditions => ['image_file_name <> ""'], :limit => 20)
-    else 
+    else
       @artists = Artist.find_by_first_letter(params[:l])
     end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @artists }
+      format.js { @artists = Artist.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"]) }
+      format.xml { render :xml => @artists }
     end
   end
 

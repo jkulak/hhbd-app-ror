@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090626220827) do
+ActiveRecord::Schema.define(:version => 20090709055702) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(:version => 20090626220827) do
     t.string   "to_be_released"
     t.integer  "media"
     t.integer  "viewed"
+  end
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "news"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "artists", :force => true do |t|
@@ -96,6 +105,15 @@ ActiveRecord::Schema.define(:version => 20090626220827) do
     t.datetime "updated_at"
   end
 
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "songs", :force => true do |t|
     t.string   "name"
     t.integer  "length"
@@ -128,7 +146,7 @@ ActiveRecord::Schema.define(:version => 20090626220827) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
-    t.boolean  "is_admin",                  :default => false
+    t.boolean  "is_admin",                                :default => false
   end
 
 end

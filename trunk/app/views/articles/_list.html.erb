@@ -1,0 +1,23 @@
+<% object.each do |article| %>
+	<div class="article">
+		<a href="<%= article_path(article, :html) %>">
+			<h2>
+				<%= article.title %>
+			</h2>
+		</a>
+		<p>
+			<span class="date smaller">
+				<%= article.created_at.strftime('%d %B %Y') %>
+			</span>
+			<%= article.awesome_truncate(300) %>
+			<span class="more smaller">
+				<%= link_to "czytaj całość»", article_path(article, :html) %>
+			</span>
+		</p>
+		<% if admin? %>
+		<ul class="admin">
+			<li>Admin: <%= link_to 'Edytuj', edit_article_path(article) %>, <%= link_to 'Usuń', article, :confirm => 'Na pewno?', :method => :delete %></li>
+		</ul>
+		<% end %>
+	</div>
+<% end %>

@@ -13,6 +13,14 @@ class Album < ActiveRecord::Base
     {1 => "CD", 2 => "LP", 3 => "EP", 4 => "MP3", 5 => "MC", 6 => "Inne? Ale jakie???"}
   end
   
+  def artist_name
+    artist.name if artist
+  end
+  
+  def artist_name=(name)
+    self.artist = Artist.find_or_create_by_name(name) unless name.blank?
+  end
+  
 =begin
   TODO zrobić z tego partiala
 =end

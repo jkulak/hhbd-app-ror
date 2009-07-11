@@ -1,10 +1,10 @@
 <h1>Lista albumów<% if !params[:l].nil? %> [<span class="uppercase"><%= params[:l] %>]</span><% end %></h1>
 
-<%= album_menu_letters(params[:l]) %>
+<%= album_menu_letters("letternav", params[:l]) %>
 
 <%= render :partial => "list", :object => @albums %>
 
-<%= album_menu_letters(params[:l]) %>
+<%= album_menu_letters("letternav", params[:l]) %>
 <% if admin? %>
 <div class="admin">
 	<%= link_to 'Dodaj album', new_album_path %>

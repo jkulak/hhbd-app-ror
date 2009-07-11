@@ -1,7 +1,7 @@
 module AlbumsHelper
-  def album_menu_letters(selected)
+  def album_menu_letters(css_class="", selected=nil)
     alfabet=['a','ą','b','c','ć','d','e','ę','f','g','h','i','j','k','l','ł','m','n','ń','o','ó','q','p','r','s','ś','t','u','w','y','z','ź','ż']
-    menu = "<ul class=\"letternav\"><li><a href=\"" + albums_path + "\">Wszystkie</a></li><li><a>0..9</a></li>"
+    menu = "<ul class=\"" + css_class + "\"><li><a href=\"" + albums_path + "\">Wszystkie</a></li><li><a>0..9</a></li>"
     
     alfabet.each { |i|  
        if (i==selected)

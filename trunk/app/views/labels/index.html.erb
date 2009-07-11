@@ -1,10 +1,10 @@
 <h1>Lista wytwórni<% if !params[:l].nil? %> [<span class="uppercase"><%= params[:l] %>]</span><% end %></h1>
 
-<%= label_menu_letters(params[:l]) %>
+<%= label_menu_letters("letternav", params[:l]) %>
 
 <%= render :partial => "labels/list", :object => @labels %>
 
-<%= label_menu_letters(params[:l]) %>
+<%= label_menu_letters("letternav", params[:l]) %>
 
 <% if admin? %>
 	<div class="admin">
