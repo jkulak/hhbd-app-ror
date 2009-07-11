@@ -21,6 +21,12 @@ class Album < ActiveRecord::Base
     self.artist = Artist.find_or_create_by_name(name) unless name.blank?
   end
   
+  # do wyszukiwarki
+  # do wyswietlania po literkach?
+  def self.search(param)
+    find(:all, :order => "name asc", :conditions => ['name LIKE ?', "%#{param}%"])
+  end
+  
 =begin
   TODO zrobić z tego partiala
 =end

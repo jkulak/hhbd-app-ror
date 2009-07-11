@@ -408,6 +408,17 @@ ul#userfloat {
 	display: none;
 }
 
+/* search results */
+#searchres ul {
+	margin: 10px;
+}
+
+#searchres ul li {
+	margin: 0 0 8px 8px;
+	list-style-type: disc;
+	
+}
+
 #footer {
 	background: #d5c179;
 	width: 100%;
