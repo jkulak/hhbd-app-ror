@@ -57,7 +57,7 @@
 </div>
 
 <div id="main">
-	<% if !@artist.description.empty? %>
+	<% if !@artist.description.blank? %>
 	<h2>Biografia</h2>
 	<p class="info"><%= @artist.description %></p>
 	<% end %>

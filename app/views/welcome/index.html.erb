@@ -1,15 +1,31 @@
-<h2>O nas</h2>
-<p>Wersja super! z jednym patchem. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<h2>Najbliższe premiery</h2>
-<%= render :partial => "albums/list", :object => @incoming_albums %>
+<div class="box50 left">
+	
+<h1>Witaj na hhbd.pl</h1>	
+<p>Witamy na stronie o polskim hip-hopie! Piąty element, wiedza. U nas znajdziesz wszystko czego szukasz o polskim hip-hopie. Recenzje, traklisty albumów, informacje o premierach, profile wykonawców, listy wydanych płyt przez poszczególne wytwórnie, aktualne newsy, teksty piosenek i wiele innych. Zarejestruj się, będziesz miał dostęp do wielu dodatkowych opcji oraz możliwość brania udziału w konkursach!</p>
+	
+<!-- <div class="left w100p mb10">
+<h3>Wykonawcy:</h3> <%= artist_menu_letters("smaller") %>
+<h3>Albumy:</h3> <%= album_menu_letters("smaller") %>
+<h3>Wytwórnie:</h3> <%= label_menu_letters("smaller") %>
+</div> -->
 
-<h2>Ostatnio wydane</h2>
-<%= render :partial => "albums/list", :object => @recent_albums %>
+<h1>Newsy</h1>
+<%= render :partial => "articles/list", :object => Article.all(:order => 'created_at desc', :limit => 6) %>
+	<% if admin? %>
+	<ul class="admin">
+		<li>Admin: <%= link_to 'New article', new_article_path %></li>
+	</ul>
+	<% end %>
+	
+</div>
 
-<h2>Statystki</h2>
-<ul class="elemlist">
-	<li>Wykonawców: <%= @artists_count %></li>
-	<li>Albumów: <%= @albums_count %></li>
-	<li>Utworów: <%= @songs_count %></li>
-	<li>Wytwórni: <%= @labels_count %></li>
-</ul>
+
+<div class="box50 left">
+<h1>Ostatnio wydane albumy</h1>
+<%= render :partial => "albums/list", :object => Album.recent(3) %>
+</div>
+
+<div class="box50 left">
+<h1>Najbliższe premiery polskich albumów</h1>
+<%= render :partial => "albums/list", :object => Album.incoming(3) %>
+</div>

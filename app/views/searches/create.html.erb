@@ -1,0 +1,8 @@
+<h1>Wyniki wyszukiwania: "<%= params[:q] %>"</h1>
+<h2>Wykonawcy:</h2>
+<uk>
+<% @artist_search.each do |result| %>
+  <li><%= link_to highlight(result.name, params[:q], :highlighter => '<strong class="highlight">\1</strong>'), artist_path(result, :html) %></li>
+<!-- kolejne listy wynikow tutaj, dla albumow i wytworni -->
+<% end %>
+</uk>

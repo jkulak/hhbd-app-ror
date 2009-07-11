@@ -37,6 +37,12 @@ class Artist < ActiveRecord::Base
     }
   end
   
+  # do wyszukiwarki
+  # do wyswietlania po literkach?
+  def self.search(param)
+    find(:all, :order => "name asc", :conditions => ['name LIKE ?', "%#{param}%"])
+  end
+  
   def url_name
      self.name.gsub(/[^[:alnum:]]/,'-') # zamien wszysktkie znaki z name ktore nie sa alfanumeryczna na -
   end

@@ -11,11 +11,19 @@ h1, h2, p {
 	margin-bottom: 10px;
 }
 
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
 li {
 	list-style-type: none;
 }
 
-img {
+img, fieldset {
 	border: 0;
 }
 
@@ -43,11 +51,28 @@ ul ul {
 	text-transform: uppercase;
 }
 
+.smaller {
+	font-size: 12px;
+}
+
 .dotted {
 
 }
+
+.w100p {
+	width: 100%;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
 .left {
 	float: left;
+}
+
+.highlight {
+	background-color: #BDB29A;
 }
 
 li.last {
@@ -81,9 +106,6 @@ li.last {
 	background: #d5c179;
 	margin-bottom: 10px;
 }
-
-
-
 
 /* SITE HEADER */
 
@@ -143,6 +165,20 @@ ul#userfloat {
 	text-transform: uppercase;
 }
 
+#menu form {
+/*	border: 1px solid lime;*/
+	float: left;
+	margin: 8px 0 0 8px;
+}
+
+#menu form input {
+	font-size: 15px;
+}
+
+#menu form #q {
+	width: 300px;
+}
+
 /* MAIN LAYOUT */
 
 #center {
@@ -154,6 +190,34 @@ ul#userfloat {
 
 #content {
 	padding: 10px;	
+}
+
+/* MAIN SITE */
+.box50 {
+	width: 48%;
+	margin-right: 2%;
+}
+
+.box50 ul.smaller {
+	width: 100%;
+	float: left;
+}
+
+.box50 ul.smaller li {
+	float: left;
+	padding: 0.4%;	
+	text-transform: uppercase;
+}
+
+
+
+/* ARTICLE LIST */
+.article .date {
+	display: block;
+}
+
+.article span a {
+	text-decoration: none;
 }
 
 /* ELEMENT VIEW SITES */
@@ -264,7 +328,6 @@ ul#userfloat {
 
 .letternav  a {
 	display: block;
-	
 }
 
 .letternav li.selected {

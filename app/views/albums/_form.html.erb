@@ -5,10 +5,10 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :artist_id %><br />
-    <%= f.select :artist_id, @artists %>
-  </p>
+	<p>
+		<%= f.label :artist_name %><br />
+		<%= text_field_with_auto_complete :album, :artist_name,  { :size => 15 }, { :url => formatted_artists_path(:js), :method => :get, :param_name => 'search' } %>
+	</p>
   <p>
     <%= f.label :label_id %><br />
     <%= f.select :label_id, @labels %>
